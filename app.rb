@@ -33,7 +33,12 @@ db_params = {
 
  end
 
-
+post '/update' do    
+	first_name_update = params[:first_name_update]    
+	first_name = params[:first_name]    
+	db.exec("UPDATE phonebook SET first_name = '#{first_name_update}' WHERE first_name = '#{first_name}' ");    
+	redirect '/'
+end
 
 						
 						
